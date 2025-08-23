@@ -32,7 +32,7 @@ Reach out to us at: [nota@endhonesa.com](mailto:nota@endhonesa.com)
 
 ## 📖 Manifestos
 
-If you already have obtained the license, please read and understand the manifesto from [Prof. NOTA & Prof. NOTA Inc.](https://nota.endhonesa.com/) before starting to use it. Each deployment must respect the ideological foundation of Prof. NOTA Inc.
+If you have already obtained the license, please read and understand the manifesto from [Prof. NOTA & Prof. NOTA Inc.](https://nota.endhonesa.com/) before starting to use it. Each deployment must respect the ideological foundation of Prof. NOTA Inc.
 
 Manifestos are available in:
 
@@ -51,8 +51,7 @@ Manifestos are available in:
 
 **We choose to remain as children.** Because from there comes the courage to try, the joy of falling and rising again, and the boundless imagination to see the world.  
 
-Children are often reckless, careless, clumsy, and bold. Brave not because they already know, but because they do not know yet—  
-and they step forward to find out.  
+Children are often reckless, careless, clumsy, and bold. Brave not because they already know, but because they do not know yet — and they step forward to find out.  
 
 #### Play
 
