@@ -1,4 +1,4 @@
-// app/spaces/page.tsx
+// app/media/page.tsx
 
 import Link from "next/link";
 
@@ -8,8 +8,8 @@ export default function Page() {
       <Link href="/" className="underline">
         ← Back
       </Link>
-      <h1 className="text-3xl font-bold mt-4">Spaces</h1>
-      <p className="text-gray-600 mt-2">PRINCIPLE Spaces</p>
+      <h1 className="text-3xl font-bold mt-4">Media</h1>
+      <p className="text-gray-600 mt-2">PRINCIPLE Media</p>
     </main>
   );
 }

@@ -1,4 +1,7 @@
 // app/store/page.tsx
+
+import Link from "next/link";
+
 type Product = { id: string; title: string; price: number; slug: string };
 const DUMMY: Product[] = [
   {
@@ -13,7 +16,10 @@ const DUMMY: Product[] = [
 export default function StorePage() {
   return (
     <main className="p-8">
-      <h1 className="text-2xl font-bold">Store</h1>
+      <Link href="/" className="underline">
+        ← Back
+      </Link>
+      <h1 className="text-3xl font-bold mt-4">PRINCIPLE Store</h1>
       <ul className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {DUMMY.map((p) => (
           <li key={p.id} className="rounded-lg border p-4">
@@ -24,7 +30,7 @@ export default function StorePage() {
             <a
               className="inline-block mt-3 underline"
               href={`/store/product/${p.slug}`}>
-              Lihat
+              Details
             </a>
           </li>
         ))}
