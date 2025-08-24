@@ -157,7 +157,7 @@ export default function CheckoutPage() {
         if (m && form.phoneCountryCode !== m.dial) {
           setForm((prev) => ({ ...prev, phoneCountryCode: m.dial }));
         }
-      } catch (e) {
+      } catch {
         if (!on) return;
         setCountriesError("Failed to load countries.");
       } finally {
@@ -196,7 +196,7 @@ export default function CheckoutPage() {
         const data: string[] = await res.json();
         if (!on) return;
         setProvinces(data);
-      } catch (e) {
+      } catch {
         if (!on) return;
         setProvError("Failed to load provinces.");
       } finally {
@@ -230,7 +230,7 @@ export default function CheckoutPage() {
         const data: string[] = await res.json();
         if (!on) return;
         setCities(data);
-      } catch (e) {
+      } catch {
         if (!on) return;
         setCityError("Failed to load cities.");
       } finally {

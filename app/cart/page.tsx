@@ -31,62 +31,66 @@ export default function CartPage() {
     };
   }, []);
 
-  const rows =
-    (catalog ?? []).length === 0 && items.length > 0
-      ? []
-      : (items
-          .map((it) => {
-            const p = (catalog ?? []).find((x) => x.id === it.productId);
-            if (!p) return null;
-            const variant: Variant | undefined = p.variants?.find(
-              (v) => v.id === it.variantId
-            );
-            const { amount, tier } = selectPrice(p, canSeeWholesale);
-            const maxStock = (variant?.stock ??
-              p.stock ??
-              Number.POSITIVE_INFINITY) as number;
-            const subtotal = amount * it.qty;
-            const isWholesale = tier === "wholesale";
-            const minRequired = isWholesale
-              ? p.moqWholesale ?? 0
-              : p.moqRetail ?? 1;
-            const moqOk = it.qty >= minRequired;
-            const outOfStock = maxStock <= 0;
-            const overStock = it.qty > maxStock && Number.isFinite(maxStock);
-            const variantLabel = variant
-              ? [variant.attrs.color, variant.attrs.size]
-                  .filter(Boolean)
-                  .join(" / ")
-              : "Standard";
-            return {
-              p,
-              variant,
-              variantLabel,
-              qty: it.qty,
-              tier,
-              amount,
-              subtotal,
-              minRequired,
-              moqOk,
-              maxStock,
-              outOfStock,
-              overStock,
-            };
-          })
-          .filter(Boolean) as Array<{
-          p: Product;
-          variant?: Variant;
-          variantLabel: string;
-          qty: number;
-          tier: "retail" | "wholesale";
-          amount: number;
-          subtotal: number;
-          minRequired: number;
-          moqOk: boolean;
-          maxStock: number;
-          outOfStock: boolean;
-          overStock: boolean;
-        }>);
+  const rows = useMemo(() => {
+    if (!catalog || catalog.length === 0) return [];
+
+    return items
+      .map((it) => {
+        const p = catalog.find((x) => x.id === it.productId);
+        if (!p) return null;
+
+        const variant: Variant | undefined = p.variants?.find(
+          (v) => v.id === it.variantId
+        );
+        const { amount, tier } = selectPrice(p, canSeeWholesale);
+
+        const maxStock = (variant?.stock ??
+          p.stock ??
+          Number.POSITIVE_INFINITY) as number;
+        const subtotal = amount * it.qty;
+        const isWholesale = tier === "wholesale";
+        const minRequired = isWholesale
+          ? p.moqWholesale ?? 0
+          : p.moqRetail ?? 1;
+        const moqOk = it.qty >= minRequired;
+        const outOfStock = maxStock <= 0;
+        const overStock = it.qty > maxStock && Number.isFinite(maxStock);
+        const variantLabel = variant
+          ? [variant.attrs.color, variant.attrs.size]
+              .filter(Boolean)
+              .join(" / ")
+          : "Standard";
+
+        return {
+          p,
+          variant,
+          variantLabel,
+          qty: it.qty,
+          tier,
+          amount,
+          subtotal,
+          minRequired,
+          moqOk,
+          maxStock,
+          outOfStock,
+          overStock,
+        };
+      })
+      .filter(Boolean) as Array<{
+      p: Product;
+      variant?: Variant;
+      variantLabel: string;
+      qty: number;
+      tier: "retail" | "wholesale";
+      amount: number;
+      subtotal: number;
+      minRequired: number;
+      moqOk: boolean;
+      maxStock: number;
+      outOfStock: boolean;
+      overStock: boolean;
+    }>;
+  }, [catalog, items, canSeeWholesale]);
 
   const total = useMemo(() => rows.reduce((a, r) => a + r.subtotal, 0), [rows]);
   const allMOQOk = rows.every((r) => r.moqOk);

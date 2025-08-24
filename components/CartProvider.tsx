@@ -40,24 +40,39 @@ const STORAGE_VERSION = 1;
 type PersistShape = { version: number; items: CartItem[] };
 
 function sanitize(raw: unknown): CartItem[] {
-  if (!raw || !Array.isArray(raw)) return [];
+  if (!Array.isArray(raw)) return [];
+
   const cleaned = raw
-    .map((x) => {
-      if (!x || typeof x !== "object") return null;
-      const r = x as any;
+    .map((x): CartItem | null => {
+      if (x === null || typeof x !== "object") return null;
+
+      const r = x as Record<string, unknown>;
+
       const productId = typeof r.productId === "string" ? r.productId : null;
+
       const variantId =
-        r.variantId === undefined || typeof r.variantId === "string"
+        r.variantId === undefined
+          ? undefined
+          : typeof r.variantId === "string"
           ? r.variantId
           : undefined;
-      const qtyNum = Number(r.qty);
-      const qty = Number.isFinite(qtyNum) ? Math.floor(qtyNum) : 0;
-      if (!productId || qty <= 0) return null;
-      return { productId, variantId, qty } as CartItem;
-    })
-    .filter(Boolean) as CartItem[];
 
-  // merge duplicates (same productId + variantId)
+      // qty bisa datang sebagai number/string → normalisasi ke integer ≥ 1
+      let qty = 0;
+      const q = r.qty;
+      if (typeof q === "number") {
+        qty = Math.floor(q);
+      } else if (typeof q === "string") {
+        const n = Number(q);
+        qty = Number.isFinite(n) ? Math.floor(n) : 0;
+      }
+
+      if (!productId || qty <= 0) return null;
+      return { productId, variantId, qty };
+    })
+    .filter((v): v is CartItem => v !== null);
+
+  // Merge duplikat (productId + variantId)
   const key = (i: CartItem) => `${i.productId}::${i.variantId ?? "-"}`;
   const map = new Map<string, CartItem>();
   for (const it of cleaned) {

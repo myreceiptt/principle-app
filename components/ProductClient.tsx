@@ -22,7 +22,10 @@ export default function ProductClient({ product }: { product: Product }) {
   const { tier, amount } = selectPrice(product, canSeeWholesale);
   const priceLabel = tier === "wholesale" ? "Wholesale (retailer)" : "Retail";
 
-  const variants = product.variants ?? [];
+  const variants = useMemo<Variant[]>(
+    () => product.variants ?? [],
+    [product.variants]
+  );
 
   // KUMPULKAN daftar opsi tanpa auto-select (biar default gambar = product.images[])
   const colors = useMemo(
