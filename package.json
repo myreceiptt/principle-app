@@ -2,11 +2,24 @@
   "name": "principle-app",
   "version": "0.1.0",
   "private": true,
+  "description": "PRINCIPLE — Company & Brand Profile • Store • Spaces • Labs • Media",
+  "author": "Prof. NOTA",
+  "license": "UNLICENSED - SEE LICENSE IN LICENSE",
+  "homepage": "https://principle.example",
+  "keywords": [
+    "nextjs",
+    "typescript",
+    "tailwind",
+    "ecommerce",
+    "storefront",
+    "principle"
+  ],
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build --turbopack",
+    "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "next lint",
+    "format": "prettier --write ."
   },
   "dependencies": {
     "next": "15.5.0",
@@ -14,16 +27,23 @@
     "react-dom": "19.1.1"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3",
-    "@tailwindcss/postcss": "^4",
+    "@eslint/eslintrc": "^3.3.1",
+    "@tailwindcss/postcss": "^4.1.12",
     "@types/node": "^24.3.0",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
+    "@types/react": "^19.1.11",
+    "@types/react-dom": "^19.1.7",
     "dotenv": "^17.2.1",
-    "eslint": "^9",
+    "eslint": "^9.34.0",
     "eslint-config-next": "15.5.0",
-    "tailwindcss": "^4",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.12",
     "tsx": "^4.20.5",
-    "typescript": "^5"
-  }
+    "prettier": "^3.3.3",
+    "typescript": "^5.9.2"
+  },
+  "engines": {
+    "node": ">=22.14.0",
+    "pnpm": ">=9.7.0"
+  },
+  "packageManager": "pnpm@9.12.3"
 }
