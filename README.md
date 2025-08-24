@@ -1,5 +1,12 @@
 # PRINCIPLE APP
 
+## 📦 Staging The PRINCIPLE [![version](https://img.shields.io/badge/version-0.1.11-blue)](https://github.com/myreceiptt/principle-app?tab=readme-ov-file#the-principle-of-prof-nota)
+
+Link #1: [www.principle.id](https://www.principle.id/) [![status](https://img.shields.io/badge/deploy-live-red)](https://www.principle.id/)  
+Link #2: [principle.endhonesa.com](https://principle.endhonesa.com/) [![status](https://img.shields.io/badge/deploy-live-brightgreen)](https://principle.endhonesa.com/)
+
+---
+
 ## 🚀 Quick Start
 
 ```bash
