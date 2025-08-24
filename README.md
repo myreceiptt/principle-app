@@ -67,8 +67,7 @@ Learning makes play meaningful, and makes work no longer a burden.
 
 #### Work
 
-Work is the longer game. Not just routine, but the continuation of play and learning. We work to bring imagination into form,  
-to turn what is only possible into something real.  
+Work is the longer game. Not just routine, but the continuation of play and learning. We work to bring imagination into form, to turn what is only possible into something real.  
 
 And in work, too, we carry that same recklessness and bravery of children — not blind courage, but courage that transforms ignorance into wisdom.  
 

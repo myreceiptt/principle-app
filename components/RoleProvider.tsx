@@ -7,7 +7,7 @@ import {
   useContext,
   useMemo,
   useState,
-  type ReactNode, // <- biarkan ini jika dipakai di props (lihat di bawah)
+  type ReactNode,
 } from "react";
 
 export type BaseRole = "guest" | "member";
@@ -34,50 +34,48 @@ type RoleContextValue = {
 
 const RoleContext = createContext<RoleContextValue | null>(null);
 
+// Saat logout: tidak ada badge.
+const DEFAULT_BADGES_LOGGED_OUT: Badge[] = [];
+// Setelah login (sesuai kebiasaanmu): superprinciple dicentang default,
+// tapi TIDAK memberi akses wholesale karena canSeeWholesale hanya cek 'retailer'.
+const DEFAULT_BADGES_ON_LOGIN: Badge[] = ["superprinciple"];
+
 export function RoleProvider({ children }: { children: ReactNode }) {
-  // <- pastikan ReactNode dipakai
   const [isAuthenticated, setAuth] = useState(false);
   const [baseRole, setBaseRole] = useState<BaseRole>("guest");
   const [badges, setBadges] = useState<Set<Badge>>(
-    () => new Set<Badge>(["superprinciple"])
+    () => new Set<Badge>(DEFAULT_BADGES_LOGGED_OUT)
   );
 
   const hasBadge = (b: Badge) => badges.has(b);
 
   const toggleBadge = (b: Badge) => {
+    if (!isAuthenticated) return; // cegah toggle saat belum login
     setBadges((prev) => {
       const next = new Set(prev);
-      if (next.has(b)) {
-        if (b === "superprinciple" && next.size === 1) {
-          // guard: jangan hapus superprinciple terakhir
-          return next;
-        }
-        next.delete(b);
-      } else {
-        next.add(b);
-      }
+      if (next.has(b)) next.delete(b);
+      else next.add(b);
       return next;
     });
   };
 
-  // ✅ Hindari depend ke fungsi; cukup ke 'badges'
+  // <- KEMBALI KE ATURANMU:
+  // Hanya login + badge 'retailer' yang boleh lihat wholesale.
   const canSeeWholesale = useMemo(
-    () => badges.has("superprinciple") || badges.has("retailer"),
-    [badges]
+    () => isAuthenticated && badges.has("retailer"),
+    [isAuthenticated, badges]
   );
 
   const login = () => {
     setAuth(true);
     setBaseRole("guest");
-    // default badge saat login: hanya superprinciple tercentang
-    setBadges(new Set<Badge>(["superprinciple"]));
+    setBadges(new Set<Badge>(DEFAULT_BADGES_ON_LOGIN));
   };
 
   const logout = () => {
     setAuth(false);
     setBaseRole("guest");
-    // nilai badges tidak dipakai (UI disabled saat logout), tapi boleh reset
-    setBadges(new Set<Badge>(["superprinciple"]));
+    setBadges(new Set<Badge>(DEFAULT_BADGES_LOGGED_OUT));
   };
 
   const value: RoleContextValue = {
