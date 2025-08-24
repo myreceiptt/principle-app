@@ -8,7 +8,7 @@ export default function Home() {
       <div className="max-w-2xl text-center">
         <h1 className="text-3xl font-bold">PRINCIPLE</h1>
         <p className="mt-2 text-gray-600">
-          Company & Brand Profile • Store (Retail) • Spaces • Labs • Medias
+          Company & Brand Profile • Store (Retail) • Spaces • Labs • Media
         </p>
         <div className="mt-6 grid gap-3 sm:grid-cols-2">
           <Link className="rounded-lg border p-4" href="/store">
