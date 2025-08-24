@@ -2,6 +2,7 @@
 
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "@/app/globals.css";
 import Header from "@/components/Header";
 import { RoleProvider } from "@/components/RoleProvider";
@@ -36,6 +37,7 @@ export default function RootLayout({
                 © {new Date().getFullYear()} PRINCIPLE
               </div>
             </footer>
+            <Analytics />
           </CartProvider>
         </RoleProvider>
       </body>
