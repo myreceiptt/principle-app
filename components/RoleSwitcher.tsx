@@ -29,6 +29,7 @@ export default function RoleSwitcher() {
 
   const [guardNote, setGuardNote] = useState<string>("");
   const detailsRef = useRef<HTMLDetailsElement>(null);
+  const [isBadgeOpen, setIsBadgeOpen] = useState(false);
 
   // Tutup dropdown Badges saat klik di luar & saat tekan Escape
   useEffect(() => {
@@ -37,12 +38,14 @@ export default function RoleSwitcher() {
       if (!el || !el.open) return;
       if (e.target instanceof Node && !el.contains(e.target)) {
         el.open = false;
+        setIsBadgeOpen(false);
       }
     }
     function onDocKeyDown(e: KeyboardEvent) {
       const el = detailsRef.current;
       if (e.key === "Escape" && el?.open) {
         el.open = false;
+        setIsBadgeOpen(false);
       }
     }
     document.addEventListener("pointerdown", onDocPointerDown);
@@ -109,6 +112,9 @@ export default function RoleSwitcher() {
       {/* Badges */}
       <details
         ref={detailsRef}
+        onToggle={(event) => {
+          setIsBadgeOpen(event.currentTarget.open);
+        }}
         className={[
           "group relative",
           !isAuthenticated ? "opacity-50 pointer-events-none select-none" : "",
@@ -116,7 +122,7 @@ export default function RoleSwitcher() {
         <summary
           className="cursor-pointer rounded border px-2 py-1 text-xs hover:bg-gray-50"
           aria-haspopup="listbox"
-          aria-expanded={detailsRef.current?.open ? true : false}>
+          aria-expanded={isBadgeOpen}>
           Badges
         </summary>
         <div className="absolute right-0 z-10 mt-2 w-64 rounded border bg-white p-3 shadow">
