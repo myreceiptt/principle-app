@@ -8,7 +8,6 @@ Link #2: [principle.endhonesa.com](https://principle.endhonesa.com/) [![status](
 ---
 
 ---
----
 
 ## Maintenance by Prof. NOTA Evergreen Standard
 
@@ -17,17 +16,14 @@ This repo is intended to stay evergreen while remaining production-safe.
 ### Runtime
 
 - Node: **24.x** (see `.nvmrc` and `package.json#engines`)
-
   - ~~example alternatives: 22.x / 20.x (adjust if platform requires)~~
 
 - Package manager:
-
   - **PNPM** (lockfile: `pnpm-lock.yaml`)
   - ~~Yarn (lockfile: `yarn.lock`)~~
   - ~~NPM (lockfile: `package-lock.json`)~~
 
 - Deploy target:
-
   - **Vercel**
   - ~~Netlify~~
   - ~~Self-hosted / Docker~~
@@ -36,20 +32,17 @@ This repo is intended to stay evergreen while remaining production-safe.
 ### Monthly Safe Updates (recommended)
 
 1. Check what’s outdated:
-
    - `pnpm outdated`
    - ~~yarn outdated~~
    - ~~npm outdated~~
 
 2. Upgrade safe (patch/minor) versions:
-
    - `pnpm update`
    - ~~yarn upgrade~~
    - ~~npm update~~
    - or upgrade specific packages shown as non-major
 
 3. Verify:
-
    - `pnpm audit --audit-level moderate`
    - ~~yarn audit --level moderate~~
    - ~~npm audit~~
@@ -61,7 +54,6 @@ This repo is intended to stay evergreen while remaining production-safe.
    - ~~npm run build~~
 
 4. Deploy:
-
    - **Vercel auto-deploy from `main`**
    - ~~manual deploy according to platform workflow~~
 
@@ -129,35 +121,35 @@ Manifestos are available in:
 
 ### Play • Learn • Work
 
-**We choose to remain as children.** Because from there comes the courage to try, the joy of falling and rising again, and the boundless imagination to see the world.  
+**We choose to remain as children.** Because from there comes the courage to try, the joy of falling and rising again, and the boundless imagination to see the world.
 
-Children are often reckless, careless, clumsy, and bold. Brave not because they already know, but because they do not know yet — and they step forward to find out.  
+Children are often reckless, careless, clumsy, and bold. Brave not because they already know, but because they do not know yet — and they step forward to find out.
 
 #### Play
 
-Play is how we open the door. Everything new begins with curiosity. In play, there is no right or wrong — only experiments that lead to discoveries.  
+Play is how we open the door. Everything new begins with curiosity. In play, there is no right or wrong — only experiments that lead to discoveries.
 
-Sometimes play means being reckless, sometimes careless, even foolish. But through these moments, we experience what can never be learned from books. If we have not yet felt the pain, we have not yet learned the lesson.  
+Sometimes play means being reckless, sometimes careless, even foolish. But through these moments, we experience what can never be learned from books. If we have not yet felt the pain, we have not yet learned the lesson.
 
 #### Learn
 
-Learning is the breath of every step. We never stop learning. Every mistake is a teacher, every failure is fuel. To know because we have experienced, to understand because we once fell — this is the kind of wisdom that grows from the ground up.  
+Learning is the breath of every step. We never stop learning. Every mistake is a teacher, every failure is fuel. To know because we have experienced, to understand because we once fell — this is the kind of wisdom that grows from the ground up.
 
-Learning makes play meaningful, and makes work no longer a burden.  
+Learning makes play meaningful, and makes work no longer a burden.
 
 #### Work
 
-Work is the longer game. Not just routine, but the continuation of play and learning. We work to bring imagination into form, to turn what is only possible into something real.  
+Work is the longer game. Not just routine, but the continuation of play and learning. We work to bring imagination into form, to turn what is only possible into something real.
 
-And in work, too, we carry that same recklessness and bravery of children — not blind courage, but courage that transforms ignorance into wisdom.  
+And in work, too, we carry that same recklessness and bravery of children — not blind courage, but courage that transforms ignorance into wisdom.
 
 ---
 
 ## The PRINCIPLE of This PRINCIPLE APP
 
-- **Play without fear, even recklessly.**  
-- **Learn without end, even from mistakes.**  
-- **Work without losing the soul of a child.**  
+- **Play without fear, even recklessly.**
+- **Learn without end, even from mistakes.**
+- **Work without losing the soul of a child.**
 
 > This repository is not only a digital product, but a space to prove that **the best work is done through learning, the best learning is done through play, and sometimes wisdom only arrives after we stumble, fall, and rise again.**
 
