@@ -7,35 +7,41 @@ Link #2: [principle.endhonesa.com](https://principle.endhonesa.com/) [![status](
 
 ---
 
----
+## The PRINCIPLE of Prof. NOTA
 
-## Maintenance by Prof. NOTA Evergreen Standard
+### Play • Learn • Work
 
-This repo is intended to stay evergreen while remaining production-safe.
+**We choose to remain as children.** Because from there comes the courage to try, the joy of falling and rising again, and the boundless imagination to see the world.
 
-### Current Baseline (Jan 2026)
+Children are often reckless, careless, clumsy, and bold. Brave not because they already know, but because they do not know yet — and they step forward to find out.
 
-- Runtime: Node **24.x** (Vercel-compatible; see `.nvmrc` and `package.json#engines`)
-- Package manager: pnpm **10.28.x** (lockfile: `pnpm-lock.yaml`)
-- Types: `@types/node` **24.10.7** (pinned to match Node 24; 25.x intentionally deferred)
-- Key packages: Next.js **16.1.4**, React **19.2.3**
-- Deploy target: **Vercel auto-deploy from `main`**
+#### Play
 
-### Monthly Evergreen Cycle (safe)
+Play is how we open the door. Everything new begins with curiosity. In play, there is no right or wrong — only experiments that lead to discoveries.
 
-- `pnpm install`
-- `pnpm up -L`
-- If `@types/node` gets bumped, repin to **24.10.7**.
-- `pnpm audit --audit-level moderate`
-- `pnpm lint`
-- `pnpm build`
+Sometimes play means being reckless, sometimes careless, even foolish. But through these moments, we experience what can never be learned from books. If we have not yet felt the pain, we have not yet learned the lesson.
 
-### Quarterly Evergreen Cycle (major review)
+#### Learn
 
-- Review majors one at a time (framework/tooling), with a dedicated PR.
-- Prefer `pnpm up --latest <pkg>` per-package rather than a blanket major bump.
+Learning is the breath of every step. We never stop learning. Every mistake is a teacher, every failure is fuel. To know because we have experienced, to understand because we once fell — this is the kind of wisdom that grows from the ground up.
+
+Learning makes play meaningful, and makes work no longer a burden.
+
+#### Work
+
+Work is the longer game. Not just routine, but the continuation of play and learning. We work to bring imagination into form, to turn what is only possible into something real.
+
+And in work, too, we carry that same recklessness and bravery of children — not blind courage, but courage that transforms ignorance into wisdom.
 
 ---
+
+## The PRINCIPLE of This PRINCIPLE APP
+
+- **Play without fear, even recklessly.**
+- **Learn without end, even from mistakes.**
+- **Work without losing the soul of a child.**
+
+> This repository is not only a digital product, but a space to prove that **the best work is done through learning, the best learning is done through play, and sometimes wisdom only arrives after we stumble, fall, and rise again.**
 
 ---
 
@@ -81,44 +87,6 @@ Manifestos are available in:
 - 🇭🇰 [Cantonese – Hong Kong](./manifestos/manifesto_yue-Hant-HK.md)
 - 🇲🇾 [Bahasa Malaysia](./manifestos/manifesto_ms-MY.md)
 - 🇦🇪 [العربية – الإمارات](./manifestos/manifesto_ar-AE.md)
-
----
-
-## The PRINCIPLE of Prof. NOTA
-
-### Play • Learn • Work
-
-**We choose to remain as children.** Because from there comes the courage to try, the joy of falling and rising again, and the boundless imagination to see the world.
-
-Children are often reckless, careless, clumsy, and bold. Brave not because they already know, but because they do not know yet — and they step forward to find out.
-
-#### Play
-
-Play is how we open the door. Everything new begins with curiosity. In play, there is no right or wrong — only experiments that lead to discoveries.
-
-Sometimes play means being reckless, sometimes careless, even foolish. But through these moments, we experience what can never be learned from books. If we have not yet felt the pain, we have not yet learned the lesson.
-
-#### Learn
-
-Learning is the breath of every step. We never stop learning. Every mistake is a teacher, every failure is fuel. To know because we have experienced, to understand because we once fell — this is the kind of wisdom that grows from the ground up.
-
-Learning makes play meaningful, and makes work no longer a burden.
-
-#### Work
-
-Work is the longer game. Not just routine, but the continuation of play and learning. We work to bring imagination into form, to turn what is only possible into something real.
-
-And in work, too, we carry that same recklessness and bravery of children — not blind courage, but courage that transforms ignorance into wisdom.
-
----
-
-## The PRINCIPLE of This PRINCIPLE APP
-
-- **Play without fear, even recklessly.**
-- **Learn without end, even from mistakes.**
-- **Work without losing the soul of a child.**
-
-> This repository is not only a digital product, but a space to prove that **the best work is done through learning, the best learning is done through play, and sometimes wisdom only arrives after we stumble, fall, and rise again.**
 
 ---
 
@@ -213,5 +181,37 @@ If you have questions, feel free to open an issue or reach out via the Prof. NOT
 ### 🫂 Join Prof. NOTA Discord
 
 For feedback, questions, or cultural-technical collaboration, join Prof. NOTA discord at [https://discord.gg/5KrsT6MbFm](https://discord.gg/5KrsT6MbFm).
+
+---
+
+---
+
+## Maintenance by Prof. NOTA Evergreen Standard
+
+This repo is intended to stay evergreen while remaining production-safe.
+
+### Current Baseline (Jan 2026)
+
+- Runtime: Node **24.x** (Vercel-compatible; see `.nvmrc` and `package.json#engines`)
+- Package manager: pnpm **10.28.x** (lockfile: `pnpm-lock.yaml`)
+- Types: `@types/node` **24.10.7** (pinned to match Node 24; 25.x intentionally deferred)
+- Key packages: Next.js **16.1.4**, React **19.2.3**
+- Deploy target: **Vercel auto-deploy from `main`**
+
+### Monthly Evergreen Cycle (safe)
+
+- `pnpm install`
+- `pnpm up -L`
+- If `@types/node` gets bumped, repin to **24.10.7**.
+- `pnpm audit --audit-level moderate`
+- `pnpm lint`
+- `pnpm build`
+
+### Quarterly Evergreen Cycle (major review)
+
+- Review majors one at a time (framework/tooling), with a dedicated PR.
+- Prefer `pnpm up --latest <pkg>` per-package rather than a blanket major bump.
+
+---
 
 ---
